@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>DND | EDIT YOUR INFORMATION</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/astronaut.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div id="loading" class="loading_container">
+        <h1>LOADING...</h1>
+    </div>
+
+    <div class="container edit_info_container">
+        <h3 style="margin-bottom: 30px;">EDIT YOUR INFORMATION:</h3>
+        <form id="editInformationForm">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input class="form-control" type="text" name="firstName" id="firstName">
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input class="form-control" type="text" name="lastName" id="lastName">
+            </div>
+            <div class="form-group">
+                <label>Sleep Goal:</label>
+                <input class="form-control" type="number" name="sleepGoal" id="sleepGoal">
+            </div>
+            <div class="form-group">
+                <label>Calories Goal:</label>
+                <input class="form-control" type="number" name="caloriesGoal" id="caloriesGoal">
+            </div>
+            <button type="submit" class="btn edit_btn">GO</button>
+        </form>
+    </div>
+    <script src="{{url_for('static', filename='js/editInformation.js')}}"></script>
+{% endblock %}

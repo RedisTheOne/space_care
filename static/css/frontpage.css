@@ -1,0 +1,154 @@
+/* 
+    Starry Night DEMO
+    chriscoyier@gmail.com
+    http://chriscoyier.net
+*/
+
+* { margin: 0; padding: 0; }
+
+@font-face {
+    font-family: "NASA";
+  
+    src: url("/nasafont") format("woff"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.clear {
+	clear: both;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+body { 
+	color: #eee;
+}
+
+@-webkit-keyframes STAR-MOVE {
+	from {
+		left: 0;
+		top: 0;
+	}
+	to { 
+		left: -10000px;
+		top: -2000px;
+	}
+}
+
+#background {
+	background: black url(/homebackground) repeat 5% 5%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 100;
+	
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 200s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#midground {
+	background: url(/homemidground.png) repeat 20% 20%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 200;
+	
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 150s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#foreground {
+	background: url(/homeforeground) repeat 35% 35%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 300;
+	
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 100s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+
+#page-wrap {
+	width: auto;
+	margin: 0 auto;
+	position: relative;
+	z-index: 300;
+	overflow: hidden;
+	padding: 30px 50px;
+}
+
+h1 {
+	font-family: "NASA" !important;
+	margin: 60px 0 10px 0 !important;
+	font-size: 65px !important;
+	color: #eee !important;
+}
+
+.desc {
+    color: #eee !important;
+    font-weight: 100;
+  
+}
+.de{
+    width: 100px;;
+}
+
+#description {
+	width: auto;
+	margin: 0 auto;
+	position: relative;
+	z-index: 300;
+	overflow: hidden;
+	padding: 30px 50px;
+}
+
+#buttons {
+	width: auto;
+	margin: 0 auto;
+	position: relative;
+	z-index: 300;
+	overflow: hidden;
+	padding: 30px 50px;
+}
+
+#signup, #login {
+	background: linear-gradient(80deg, #5f2cf8 0%,#0c164f 100%);
+    width: 150px;
+	padding-top: 17px;
+	outline: none;
+	border: 0px;
+}
+
+#signup, #login:hover {
+	color: white !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+	#signup {
+		margin-left: -150px;
+		margin-bottom: 170px;
+	}
+	#login{
+		margin-left: -50px;
+	}
+}
+
+#askButton {
+    margin: 0 auto;
+    float: right;
+	position: relative;
+	z-index: 300;
+	overflow: hidden;
+}

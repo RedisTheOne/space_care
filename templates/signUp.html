@@ -1,0 +1,55 @@
+{% extends 'baseForm.html' %}
+
+{% block title %} <h4 class="center" id="header">SIGN UP</h4> {%endblock%}
+
+{%block contents%}
+    <div class="row">
+        <div class="input-field col s12"><input required class="text validate" type="text" id="firstNameInput" required="required" /><label>First Name</label>
+        <!-- <span class="helper-text" data-error="Enter 4 characters"></span> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12"><input class="text validate" type="text" id="lastNameInput" required="required" /><label>Last Name</label>
+            <!-- <span class="helper-text" data-error="Enter 4 characters"></span> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12"><input class="email validate" type="text" required="required" id="usernameInput" /><label>Username</label>
+            <!-- <span class="helper-text" data-error="Enter 4 characters"></span> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12"><input class="number validate" type="number" required="required" id="caloriesGoalInput" /><label>Calories Goal</label>
+            <!-- <span class="helper-text" data-error="Min calories is 1500 Kcal/day"></span> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12"><input class="number validate" type="number" required="required" id="sleepGoalInput" /><label>Sleep Goal</label>
+            <!-- <span class="helper-text" data-error="Min sleep goal is 4 hours"></span> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12"><input class="password validate" type="password" id="passwordInput" required="required" /><label>Password</label>
+            <!-- <span class="helper-text" data-error="Enter 4 characters"></span> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <button id="avatarBtn" type="button" class="btn btn-large">UPLOAD AVATAR</button>
+            <input type="file" style="width: 0px; height: 0px;" id="avatarInput">
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 center"><a class="waves-effect waves-light btn btn-large submit-signup" id="signUpBtn">GO</a></div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 center"><label id="existingacc">Already a member?</label><a href="/signin" class="existingacc test">Sign in</a></div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 center error-display">Error Here</div>
+    </div>
+{%endblock%}
+
+{% block scriptsContainer %}
+    <script src="{{url_for('static', filename='js/signUp.js')}}"></script>
+{% endblock scriptsContainer %}

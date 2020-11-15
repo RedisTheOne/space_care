@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{{title}}</title>
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/astronaut.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div id="loading" class="loading_container">
+        <h1>LOADING...</h1>
+    </div>
+    <div class="container con">
+        <div class="row no-gutter">
+          <div class="col col-lg-2">
+            <div id="astronaut" class="astronaut_container card border-dark mb-3" style="margin-left: 0px; margin-top: 50px">
+              <img class="card-img-top" id="avatarImg" src="/photo.jpeg">
+              <div class="card-body">
+                <h5 class="card-title" id="astronautName">Redis</h5>
+                <p class="card-text" id="astronautSleepGoal">8hrs of sleep</p>
+                <p class="card-text" id="astronautCalories">2000 Kcal/day</p>
+                <a href="/astronaut/sleepdeclarations/monthly"><p>Sleep history</p</a>
+                <a href="/astronaut/nutritions/monthly"><p>Nutrition history</p></a>
+                <p></p>
+                <a href="/astronaut/edit" class="btn btn-primary">Edit<span class="space"></span><i class="fa fa-pencil"></i></a>
+              </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row graphs">
+            <div class="d-flex flex-row" style="margin-left: 20px">
+                <div class="rounded-lg p-5 shadow">
+                    <h2 class="h6 font-weight-bold text-center mb-4">Nutrition Progress</h2>
+                <div class="progress" style="margin-left: 0px;" data-nutrition=''>
+                    <span class="progress-left">
+                        <span class="progress-bar border-primary" id="nutritionLeft"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar border-primary" id="nutritionRight"></span>
+                    </span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                      <div class="h2 font-weight-bold" id="nutritionPercantageValue"><sup class="small">%</sup></div>
+                    </div>
+                </div>
+                <h5 class="kca" id="nutritionSum"></h5>
+                <div class="btn-group">
+                    <button style="width: 170px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Scrollable Menu <span class="caret"></span></button>
+                    <ul class="dropdown-menu scrollable-menu" role="menu" id="astronautNutritionList">
+                        
+                    </ul>
+                </div>
+                <br> <br>
+                <button class="dropdown btn" style="width: 170px;">
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Your Nutrition List
+                    </a>
+          
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Breakfast 1/2</a>
+                          <ul class="dropdown-menu scrollable-menu">
+                            <a class="dropdown-item item1" id="scrambledEggs-199">Scrambled eggs</a>
+                            <a class="dropdown-item item2" id="cornflakes-90">Cornflakes</a>
+                            <a class="dropdown-item item3" id="appleSauce-137">Apple sauce</a>
+                            <a class="dropdown-item item4" id="seasonedPoachedEggsFreezeDriedBeefPatty-275">Seasoned poached eggs & freeze-dried beef patty</a>
+                            <a class="dropdown-item item5" id="mappleToppedMuffin-360">Mapple-topped muffin</a>
+                            <a class="dropdown-item item6" id="cannedKimichi-100">Canned kimichi</a>
+                            <a class="dropdown-item item7" id="coldRoastPorkMashedPotatoes-270">Cold roast pork & mashed potatoes</a>
+                            <a class="dropdown-item item8" id="blackCoffeTea-1">Black coffe & tea</a>
+                            <a class="dropdown-item item9" id="cheeseAppleJuiceBiscuits-170">Cheese, apple juice & biscuits</a>
+                            <a class="dropdown-item item10" id="muesliProteinBar-125">Muesli protein bar</a>
+                            <a class="dropdown-item item11" id="chocolateMilkBiscuits-300">Chocolate milk & biscuits</a>
+                            <a class="dropdown-item item12" id="glassCanberryJuice-140">Glass of canberry juice</a>
+                            <a class="dropdown-item item13" id="slicedApplesOranges-110">Sliced apples & oranges</a>
+                            <a class="dropdown-item item14" id="toastButter-90">Toast & butter</a>
+                            <a class="dropdown-item item15" id="pbjSandwich-330">PBJ Sandwich</a>
+                            <a class="dropdown-item item16" id="oatmealRaisins-435">Oatmeal w/ raisins</a>
+                            <a class="dropdown-item item17" id="ricePorridge-360">Rice Porridge</a>
+                          </ul>
+          
+          
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Lunch</a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                <a class="dropdown-item item18" id="beefChopsMushrooms-400">Beef chops w/ mushrooms</a>
+                                <a class="dropdown-item item19" id="steamRiceGravy-380">Steam rice and gravy</a>
+                                <a class="dropdown-item item20" id="pickledTomatoesFetaCheese-50">Pickled tomatoes & feta cheese</a>
+                                <a class="dropdown-item item21" id="artichokesSteamedFishFillet-240">Artichokes & steamed fish fillet</a>
+                                <a class="dropdown-item item22" id="brownies-200">Brownies</a>
+                                <a class="dropdown-item item23" id="coleslaw-50">Coleslaw</a>
+                                <a class="dropdown-item item24" id="fruitSaladLemonade-160">Fruit salad & lemonade</a>
+                                <a class="dropdown-item item25" id="crackersTurkeySpread-230">Crackers and turkey spread</a>
+                                <a class="dropdown-item item26" id="creamBroccoliSoupTomateoSoup-275">Cream broccoli soup / tomateo soup</a>
+                                <a class="dropdown-item item27" id="escallopedChickenNoodles-630">Escalloped chicken & noodles</a>
+                                <a class="dropdown-item item28" id="chickenTeriyaki-350">Chicken Teriyaki</a>
+                                <a class="dropdown-item item29" id="saladChickenSpread-333">Salad w/ chicken spread</a>
+                                <a class="dropdown-item item30" id="sourSauceTortilla-256">Sour sauce torilla 2x</a>
+                                <a class="dropdown-item item31" id="bowlSpinachFettuccine-211">Bowl of spinach fettuccine</a>
+                                <a class="dropdown-item item32" id="mushroomRavioli-537">Mushroom Ravioli</a>
+                                <a class="dropdown-item item33" id="friedBeansBaconMustard-377">Fried beans, bacon & mustard</a>
+                            </ul>
+                        </li>
+        
+                        <li class="dropdown-submenu">
+                          <a class="dropdown-item dropdown-toggle" href="#">Dinner</a>
+                          <ul class="dropdown-menu scrollable-menu">
+                            <a class="dropdown-item item34" id="tomatoStewWhiteRyeBread-260">Tomato stew & white rye bread</a>
+                            <a class="dropdown-item item35" id="pecanPie-960">Pecan pie 2x slc</a>
+                            <a class="dropdown-item item36" id="tossedGreenSaladGrilledChickenBreast-275">Tossed green salad & Grilled chicken breast</a>
+                            <a class="dropdown-item item37" id="bonelessShortRibsBbqSauces-330">Boneless short ribs & BBQ sauce</a>
+                            <a class="dropdown-item item38" id="lemonPieTea-405">Lemon pie & tea</a>
+                            <a class="dropdown-item item39" id="filletMignon-237">Filet mignon</a>
+                            <a class="dropdown-item item40" id="butteredSauteedMushrooms-167">Buttered sauteed mushrooms</a>
+                            <a class="dropdown-item item41" id="turkeyMeatJerkyCheeseSpread-200">Turkey meat jerky & cheese spread</a>
+                            <a class="dropdown-item item42" id="pepperoniPizza-300">Pepperoni pizza</a>
+                            <a class="dropdown-item item43" id="chilliChickenTacos-260">Chilli chicken tacos</a>
+                            <a class="dropdown-item item44" id="cannedChocolatePudding-200">Canned chocolate pudding</a>
+                          </ul>
+                        </li>
+                      </li>
+                    </ul>
+                </button>
+                <br>
+                <button id="nutritionButton" class="btn btn-primary" style="width: 170px; margin-top: 16px;">Add</button>
+                <br>
+                <ul id="todayNutritionsList" class="list-group" style="width: 170px; margin-top: 16px;">
+                </ul>
+            </div>
+            <div class="d-flex flex-row" style="margin-left: 180px;">
+                <div class="rounded-lg p-5 shadow">
+                    <h2 class="h6 font-weight-bold text-center mb-4">Sleep progress</h2>
+                <div class="progress" data-value2='90'>
+                    <span class="progress-left">
+                        <span class="progress-bar border-primary" id="sleepLeft"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar border-primary" id="sleepRight"></span>
+                    </span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                      <div class="h2 font-weight-bold" id="sleepPercantageValues"><sup class="small"></sup></div>
+                    </div>
+                </div>
+                <h5 class="kca" id="sleepSum"></h5>
+                <input id="sleepInput" style="width: 170px" class="form-control" type="number">
+                <button type="button" id="sleepButton" class="btn btn-primary" style="width: 170px; margin-top: 16px;">Edit</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/astronaut.js')}}"></script>
+
+{% endblock %}

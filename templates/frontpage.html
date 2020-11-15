@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>DND | SLEEP SCHEDULE TOOL</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/frontpage.css')}}" />
+	<link rel="icon" href="{{url_for('static', filename='favicon.ico')}}">
+	<link rel="stylesheet" href="https://www.fontspace.com/junior-prince-font-f48690">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}" />
+            
+</head>
+
+<body>
+    <div id="background"></div>
+    <div id="midground"></div>
+	<div id="foreground"></div>
+	<div class="container">
+		<div id="page-wrap">
+			<h1>SPACE CARE</h1>
+		</div>
+		<div id="description">
+			<section>
+				<center>
+				<div class="container my-5">
+					  <div class="row">
+						<div class="">
+							<h5 class="secondary-color text-uppercase pff"></h5>
+						</div>
+						
+						<div class=" col-md-10  text-md-left">
+							<h5 class="secondary-color text-uppercase pff desc" style="text-align: left;"><b>Daily sleep and nutrients schedule for astronauts. <br>Maintain your daily activities properly, even in the depths of space.</b></h5>
+						</div>
+			 
+						<div id="buttons" style="margin-top: 60px;">
+							<a class="waves-effect waves-light btn btn-large" id="login" href="/signin">LOG IN</a>
+							<a class="waves-effect waves-light btn btn-large" id="signup" href="/signup">SIGN UP</a>
+						</div>
+						</div>
+					</div>
+					</center>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	
+	<!--<a class="btn-floating btn-large waves-effect waves-light red" id="askButton"><i class="material-icons">?</i></a>-->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="bootstrap.bundle.min.js"></script>
+	<script>
+		if(localStorage.getItem('USERNAME'))
+			window.location.href = '/astronaut';
+	</script>
+</body>
+</html>

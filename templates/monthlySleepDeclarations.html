@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>DND | MONTHLY SLEEP DECLARATIONS</title>
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/astronaut.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div id="loading" class="loading_container">
+        <h1>LOADING...</h1>
+    </div>
+
+    <div class="monthly_sleep_declarations container" id="monthlySleepDeclarations">
+        <h3 id="header"></h3>
+        <ul class="list-group" id="sleepDeclarationsList">
+        </ul>
+    </div>
+    <script src="{{url_for('static', filename='js/monthlySleepDeclarations.js')}}"></script>
+{% endblock %}

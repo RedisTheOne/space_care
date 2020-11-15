@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+#header {
+    font-family: 'Anton', cursive;
+}
+
+body {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/milky_way.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
+}
+
+.checked {
+    background-color: lime !important;
+    color: green !important;
+} 
+
+/* sing in */
+
+.loginForm label {
+    pointer-events: none;
+}
+
+.loginForm a {
+    cursor: pointer;
+}
+
+.loginForm .row {
+    margin-bottom: 0;
+}
+
+.loginForm #signInBtn, #signUpBtn {
+    width: 100%;
+    background: linear-gradient(80deg, #33d5bf 0%, #673AB7 100%);
+}
+
+.loginForm {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.loginForm form {
+    height: auto;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 1px 4px 4px grey;
+    border-radius: 6px;
+    background-color: white;
+    max-width: 350px;
+}
+
+.error-display {
+    display:none;
+    margin-bottom:15px;
+    padding:15px;
+    background-color:#fff4cc;
+    border:solid 2px #ffe070
+}
+
+
+#noaccount {
+    position:relative;
+    color: #696969;
+    padding-right: 20px;
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 70%;
+    height: 60%;
+}
+
+.modal {
+    width: 30%;
+    height:40%;
+    position: fixed;
+}
+
+.modal a {
+    width: 30%;
+    position: relative;
+}
+
+#forgotpassword {
+    font-size:20px;
+}
+
+#emailadress {
+    font-size: 15px;
+    color: #212121;
+}
+
+.btn-small {
+    line-height: 50px;
+    min-height: 50px;
+    font-size: 16px;
+    padding-right: 20px;
+    float: none;
+    display: inline-block;
+
+}
+.modal .modal-footer {
+    text-align: center;
+}
+
+
+/* Sign UP */
+
+.signupForm label {
+    pointer-events: none;
+}
+
+.signupForm a {
+    cursor: pointer;
+}
+
+.signupForm .row {
+    margin-bottom: 0;
+}
+
+.signupForm  #signUpBtn {
+    width: 100%;
+    background: linear-gradient(80deg, #33d5bf 0%, #673AB7 100%);
+}
+
+.signupForm {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.signupForm form {
+    height: auto;
+    margin: auto;
+    margin-top : 10%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 1px 4px 4px rgb(118, 163, 245);
+    border-radius: 6px;
+    background-color: white;
+    max-width: 350px;
+}
+
+.error-display {
+    display:none;
+    margin-bottom:15px;
+    padding:15px;
+    background-color:#fff4cc;
+    border:solid 2px #ffe070
+}
+
+#existingacc {
+    position:relative;
+    color: #696969;
+    padding-right: 20px;
+}
+
+#avatarBtn {
+    width: 100%;
+    border-radius: 6px;
+    outline: 0px;
+    border: 0px;
+    background-color: #3e3e3e;
+    color: white;
+    cursor: pointer;
+}
+
+
+#toast-container {
+    position: absolute !important;
+    top: 0px !important;
+    width: 100%;
+}
